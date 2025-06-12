@@ -2,6 +2,8 @@ use std::fs::{self, File};
 use std::io::{Read, Write};
 use std::net::{TcpListener, TcpStream};
 use std::path::Path;
+use std::path::PathBuf;
+use std::fs::create_dir_all;
 use std::env;
 
 struct PostMeta {
@@ -116,6 +118,17 @@ fn main() {
         let _ = fs::remove_dir_all("dist");
     }
     fs::create_dir_all("dist/posts").unwrap();
+    create_dir_all("dist/static").unwrap();
+
+// Copy pico.css
+let source_css = PathBuf::from("template/static/pico.css");
+let dest_css = PathBuf::from("dist/static/pico.css");
+
+if let Err(e) = fs::copy(&source_css, &dest_css) {
+    eprintln!("Failed to copy pico.css: {}", e);
+} else {
+    println!("\u{2713} Copied: pico.css → dist/static/");
+}
     
     let template = fs::read_to_string("template/post.html").expect("Missing template/post.html");
 
@@ -203,7 +216,7 @@ fn handle_connection(mut stream: TcpStream) {
     let mut contents = fs::read_to_string(&file_path).unwrap_or_else(|_| fs::read_to_string("dist/404.html").unwrap_or_else(|_| "<h1>404 Not Found</h1>".to_string()));
 
 
-    if file_path == "index.html" {
+    if file_path == "dist/index.html" {
         let total_bytes = compute_total_size(".");
         let (size_str, unit) = if total_bytes >= 1024 * 1024 {
             (format!("{:.2}", total_bytes as f64 / (1024.0 * 1024.0)), "MB")
