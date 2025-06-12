@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Qu's Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="static/pico.css">
+
+</head>
+
+<body>
+
+  <main class="container">
+    <header>
+      <nav>
+        <ul>
+          <li>     <h1 style="margin: 0;">Qu's Blog?</h1></li>
+        </ul>
+        <ul>
+          <li><a href="../../">Home</a></li>
+          <li><a href="../posts.html">Posts</a></li>
+          <li><a href="../posts.html">Works</a></li>
+        </ul>
+      </nav>
+      <p class="subtitle">Essays, explorations, and experiments — no scripts attached.</p>
+    </header>
+
+
+    <article>
+      <h2 id="site-size">Welcome...</h2>
+      <p>This is a space for ideas—uncluttered by animations, trackers, or popups. Just thoughts, typed out and served
+        with Rust.</p>
+      <blockquote>
+        “Fast sites are kind. Scriptless sites are radical.”
+      </blockquote>
+      <p>Expect essays on software minimalism, ethical tech, and the slow rebirth of the web.</p>
+    </article>
+
+    <section>
+      <h2>Featured Post</h2>
+      <ul>
+     
+          {{ featured_posts }}
+  
+      </ul>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li><strong>Scriptless</strong> — this very blog engine, made with HTML, Markdown, and Rust.</li>
+        <li><strong>Qore OS</strong> — a Linux distribution focused on clarity, performance, and self-hosting.</li>
+        <li><strong>CampusSync</strong> — a school ERP built for the real world, not the brochure.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Why This Exists</h2>
+      <p>
+        The modern web is noisy. This blog is my way of resisting that trend—no analytics, no ads, no scripts.
+        Just signal. Thoughtful writing deserves quiet surroundings.
+      </p>
+    </section>
+
+    <footer>
+      <hr>
+      <small>&copy; 2025 Qu — Powered by Rust. Styled with Pico.</small>
+    </footer>
+  </main>
+
+</body>
+
+</html>

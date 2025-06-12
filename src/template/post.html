@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }} | Qu's Blog</title>
+  <meta name="author" content="{{ author }}">
+  <meta name="description" content="{{ description }}">
+  <meta name="keywords" content="{{ tags }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link
+  rel="stylesheet"
+  href="../static/pico.css"
+>
+
+</head>
+<body>
+
+  <main class="container">
+    <header>
+        <nav>
+          <ul>
+            <li>     <h1 style="margin: 0;">Qu's Blog?</h1></li>
+          </ul>
+          <ul>
+            <li><a href="../../">Home</a></li>
+            <li><a href="../posts.html">Posts</a></li>
+            <li><a href="../posts.html">Works</a></li>
+          </ul>
+        </nav>
+        <p class="subtitle">Essays, explorations, and experiments — no scripts attached.</p>
+      </header>
+
+    <article>
+      {{ content }}
+
+      <small>By {{ author }} — {{ pub_date }}</small>
+    </article>
+
+
+    <footer>
+      <hr>
+      <small>&copy; 2025 Qu — Powered by Rust. Styled with Pico.</small>
+    </footer>
+  </main>
+
+</body>
+</html>
